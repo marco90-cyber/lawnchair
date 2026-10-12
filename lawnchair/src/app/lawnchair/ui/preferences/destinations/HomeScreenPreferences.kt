@@ -73,11 +73,10 @@ fun HomeScreenPreferences(
         modifier = modifier,
     ) {
         val lockHomeScreenAdapter = prefs2.lockHomeScreen.getAdapter()
-        val showDeckLayout = prefs2.showDeckLayout.getAdapter().state.value
 
-        if (showDeckLayout) {
-            HomeLayoutSettings()
-        }
+        // Always show the layout option (Default / Deck): Deck puts every app on the
+        // home screen and hides the app drawer.
+        HomeLayoutSettings()
 
         PreferenceGroup(heading = stringResource(id = R.string.general_label)) {
             val addIconToHomeAdapter = prefs.addIconToHome.getAdapter()
